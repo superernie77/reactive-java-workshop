@@ -9,7 +9,7 @@ public class Exercise5 {
         // Use ReactiveSources.intNumberMono() and ReactiveSources.userMono()
 
         // Subscribe to a flux using the error and completion hooks
-        // TODO: Write code here
+    	ReactiveSources.intNumbersFluxWithException().subscribe( item -> System.out.println(item), e -> System.out.println(e), () -> System.out.println("ended"));
 
         // Subscribe to a flux using an implementation of BaseSubscriber
         // TODO: Write code here
