@@ -22,10 +22,10 @@ public class Exercise7 {
         //ReactiveSources.intNumbersFlux().filter( i -> i > 100).defaultIfEmpty(-1).subscribe( i -> System.out.println(i));
 
         // Switch ints from intNumbersFlux to the right user from userFlux
-        ReactiveSources.intNumbersFlux().flatMap( id -> ReactiveSources.userFlux().filter( user -> user.getId() == id)).subscribe( user -> System.out.println(user));
+        //ReactiveSources.intNumbersFlux().flatMap( id -> ReactiveSources.userFlux().filter( user -> user.getId() == id)).subscribe( user -> System.out.println(user));
 
         // Print only distinct numbers from intNumbersFluxWithRepeat
-        // TODO: Write code here
+        ReactiveSources.intNumbersFluxWithRepeat().distinct().log().subscribe();
 
         // Print from intNumbersFluxWithRepeat excluding immediately repeating numbers
         // TODO: Write code here
