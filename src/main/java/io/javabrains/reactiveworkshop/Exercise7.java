@@ -25,11 +25,11 @@ public class Exercise7 {
         //ReactiveSources.intNumbersFlux().flatMap( id -> ReactiveSources.userFlux().filter( user -> user.getId() == id)).subscribe( user -> System.out.println(user));
 
         // Print only distinct numbers from intNumbersFluxWithRepeat
-        ReactiveSources.intNumbersFluxWithRepeat().distinct().log().subscribe();
+        //ReactiveSources.intNumbersFluxWithRepeat().distinct().log().subscribe();
 
         // Print from intNumbersFluxWithRepeat excluding immediately repeating numbers
-        // TODO: Write code here
-
+        ReactiveSources.intNumbersFluxWithRepeat().distinctUntilChanged().log().subscribe();
+        
         System.out.println("Press a key to end");
         System.in.read();
     }
